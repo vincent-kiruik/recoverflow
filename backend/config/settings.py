@@ -27,7 +27,7 @@ INSTALLED_APPS = [
     'apps.borrowers',
     'apps.loans',
     'apps.recovery',
-    'apps.collections',
+    'apps.collection',
     'apps.groups',
     'apps.analytics',
     'apps.notifications',
