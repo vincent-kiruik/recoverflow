@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Borrower
+from .serializers import BorrowerSerializer
 
-# Create your views here.
+class BorrowerViewSet(viewsets.ModelViewSet):
+    queryset = Borrower.objects.all()
+    serializer_class = BorrowerSerializer
