@@ -14,6 +14,7 @@ from apps.recovery.views import RecoveryCaseViewSet
 from apps.collection.views import CollectionViewSet
 from apps.followups.views import FollowUpActionViewSet
 from apps.common.views import ImportViewSet
+from apps.analytics.views import AnalyticsViewSet
 
 router = DefaultRouter()
 router.register(r'users', UserViewSet, basename='user')
@@ -24,6 +25,7 @@ router.register(r'recovery-cases', RecoveryCaseViewSet)
 router.register(r'collections', CollectionViewSet)
 router.register(r'follow-ups', FollowUpActionViewSet)
 router.register(r'imports',ImportViewSet, basename='import')
+router.register(r'analytics', AnalyticsViewSet, basename='analytics')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
