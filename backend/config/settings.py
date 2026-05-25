@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'apps.notifications',
     'apps.audit',
     'apps.common',
+    'apps.followups',
 ]
 AUTH_USER_MODEL = 'accounts.User'
 
