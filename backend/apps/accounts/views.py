@@ -1,13 +1,15 @@
 from rest_framework import viewsets, permissions, status
 from rest_framework.decorators import action
 from rest_framework.response import Response
+from apps.common.permissions import IsAdmin
+
 from .models import User
 from .serializers import UserSerializer, UserCreateSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [IsAdmin]
 
     def get_serializer_class(self):
         if self.action == 'create':
