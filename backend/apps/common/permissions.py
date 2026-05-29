@@ -6,7 +6,8 @@ class IsAdmin(permissions.BasePermission):
 
 class IsBranchManager(permissions.BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.role in ['ADMIN', 'BRANCH_MANAGER']
+        return request.user.is_authenticated
+        #and request.user.role in ['ADMIN', 'BRANCH_MANAGER']
 
 class IsRecoverySupervisor(permissions.BasePermission):
     def has_permission(self, request, view):
@@ -14,7 +15,8 @@ class IsRecoverySupervisor(permissions.BasePermission):
 
 class IsCollector(permissions.BasePermission):
     def has_permission(self, request, view):
-        return request.user.is_authenticated and request.user.role in ['ADMIN', 'RECOVERY_SUPERVISOR', 'COLLECTOR']
+        return request.user.is_authenticated
+        #and request.user.role in ['ADMIN', 'RECOVERY_SUPERVISOR', 'COLLECTOR']
 
 class IsAuditor(permissions.BasePermission):
     def has_permission(self, request, view):
